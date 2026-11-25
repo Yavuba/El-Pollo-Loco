@@ -1,7 +1,8 @@
 class Chicken extends MovableObject {
-    y = 355;
+    
     height = 70;
     width = 60;
+    y = 355;
 
     IMAGES_WALKING = [
         'img/3_enemies_chicken/chicken_normal/1_walk/1_w.png',
@@ -14,12 +15,14 @@ class Chicken extends MovableObject {
         this.loadImages(this.IMAGES_WALKING);
 
         this.x = 200 + Math.random() * 500;
+        this.speed = 0.15 + Math.random() * 0.5,
+
         this.animate();
-
-
     }
 
     animate() {
+        this.moveLeft();
+
         setInterval( () => {
             let i = this.currentImage % this.IMAGES_WALKING.length; // let i = 6 % 6; 1, Rest 0
             // i = 0, 1, 2, 3, 4, 5, 0, 1, 2....... unendliche Reihe
