@@ -42,11 +42,7 @@ class Character extends MovableObject{
 
             if(this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
                 // walk animation //
-                let i = this.currentImage % this.IMAGES_WALKING.length; // let i = 6 % 6; 1, Rest 0
-                // i = 0, 1, 2, 3, 4, 5, 0, 1, 2....... unendliche Reihe
-                let path = this.IMAGES_WALKING[i];
-                this.img = this.imageCache[path];
-                this.currentImage++;
+                this.playAnimation(this.IMAGES_WALKING);
             }
         }, 50);
     }
